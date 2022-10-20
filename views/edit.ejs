@@ -1,0 +1,82 @@
+<%- include("layouts/header")%>
+<body>
+  <div class="container">
+    <h1>Student Registration Form</h1>
+    <form action="/update" method="post" enctype="multipart/form-data">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="firstName"
+              id="firstName"
+              required
+              value="<%= response.firstName%>"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="lastName"
+              id="lastName"
+              required
+              value="<%= response.lastName%>"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              id="email"
+              required
+              value="<%= response.email%>"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="">Contact Number</label>
+            <input
+              type="number"
+              class="form-control"
+              name="contactNumber"
+              id="contactNumber"
+              required
+              value="<%= response.contactNumber%>"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="">Profile Image</label>
+            <input
+              type="file"
+              class="form-control"
+              name="image"
+              id="image"
+              value="<%= response.image%>"
+            />
+          </div>
+        </div>
+      </div>
+      <input type="hidden" name="id" value="<%= response._id%>">
+      <a href="/student-view">Student List</a>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">
+        Update
+      </button>
+    </form>
+  </div>
+</body>
+<%- include("layouts/footer")%>

@@ -1,0 +1,33 @@
+<%- include("layouts/header")%>
+<div class="container">
+  <h1>Student List</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Contact Number</th>
+        <th scope="col">Profile Image</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% let i=1; studentData.map(data => {%>
+      <tr>
+        <td><%= i++%></td>
+        <td><%= data.firstName%></td>
+        <td><%= data.lastName%></td>
+        <td><%= data.email%></td>
+        <td><%= data.contactNumber%></td>
+        <td><img src="./uploads/<%= data.image%>" width="50px" hight="50px"></td>
+        <td><a href="edit/<%= data._id%>">Edit</a></td>
+        <td><a href="delete/<%= data._id%>">Delete</a></td>
+      </tr>
+      <%})%>
+    </tbody>
+  </table>
+  <a href="/">Home</a>
+</div>
+<%- include("layouts/footer")%>
